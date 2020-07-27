@@ -5,7 +5,12 @@
  *  changes show up while running H2O.
  */
 
-.flow-logo {
-  /* Max width 145px, max height 50px */
-  /* background-image: url('logo.png'); */
+.tetra-flow {
+    color: #000000;
+    margin-left: 5px;
+    font-weight: bold;
+}
+
+.flow-navbar {
+    border-top: 5px solid #21a79c;
 }

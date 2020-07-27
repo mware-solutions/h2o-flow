@@ -1,12 +1,12 @@
 .flow-widget
   +subtitle('Deleted', 'trash-o')
-  
+
   // ko ifnot:hasKeys
   blockquote All keys deleted.
   // /ko
 
   // ko if:hasKeys
-  p The following keys were deleted from your H<sub>2</sub>O cloud:
+  p The following keys were deleted from your Tetra cloud:
   ul
     // ko foreach:keys
     li(data-bind='text:$data')

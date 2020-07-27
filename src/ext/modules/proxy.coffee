@@ -87,7 +87,7 @@ exports.init = (_) ->
       else
         # special-case net::ERR_CONNECTION_REFUSED
         if status is 'error' and xhr.status is 0
-          new FlowError "Could not connect to H2O. Your H2O cloud is currently unresponsive."
+          new FlowError "Could not connect to Tetra. Your Tetra cloud is currently unresponsive."
         else
           new FlowError "HTTP connection failure: status=#{status}, code=#{xhr.status}, error=#{error or '?'}"
 

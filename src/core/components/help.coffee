@@ -19,7 +19,7 @@ Using Flow for the first time?
 </div>
 </blockquote>
 
-Or, <a href='#' data-action='get-pack' data-pack-name='examples'>view example Flows</a> to explore and learn H<sub>2</sub>O.
+Or, <a href='#' data-action='get-pack' data-pack-name='examples'>view example Flows</a> to explore and learn Tetra.
 
 ###### Star H2O on Github!
 
@@ -36,9 +36,9 @@ Or, <a href='#' data-action='get-pack' data-pack-name='examples'>view example Fl
 
 ###### Examples
 
-Flow packs are a great way to explore and learn H<sub>2</sub>O. Try out these Flows and run them in your browser.<br/><a href='#' data-action='get-packs'>Browse installed packs...</a>
+Flow packs are a great way to explore and learn Tetra. Try out these Flows and run them in your browser.<br/><a href='#' data-action='get-packs'>Browse installed packs...</a>
 
-###### H<sub>2</sub>O REST API
+###### Tetra REST API
 
 - <a href='#' data-action='endpoints'>Routes</a>
 - <a href='#' data-action='schemas'>Schemas</a>
@@ -97,7 +97,7 @@ exports.init = (_) ->
           # render a TOC if this topic has children
           if topic.children.length
             contents.push h6 'Topics'
-            contents.push buildToc topic.children 
+            contents.push buildToc topic.children
 
           displayHtml html.render 'div', div contents
 
@@ -175,12 +175,12 @@ exports.init = (_) ->
 
     displayHtml html.render 'div', div [
       mark 'Pack'
-      h5 packName 
+      h5 packName
       div map flowNames, (flowName) -> p [ i(), a flowName, flowName ]
     ]
     return
 
-  
+
   displayEndpoints = (routes) ->
     [ div, mark, h5, p, action, code ] = html.template 'div', 'mark', 'h5', 'p', "a href='#' data-action='endpoint' data-index='$1'", 'code'
     els = [
@@ -240,7 +240,7 @@ exports.init = (_) ->
       h5 "#{schema.name} (#{escape schema.type})"
       h6 'Fields'
     ]
-    
+
     for field in schema.fields when field.name isnt '__meta'
       content.push p "#{variable field.name}#{if field.required then '*' else ''} #{code escape field.type}<br/>#{small field.help}"
 
@@ -249,7 +249,7 @@ exports.init = (_) ->
   initialize = (catalog) ->
     _catalog = catalog
     buildTopics _index, _catalog
-    _homeContent = (marked _homeMarkdown).replace '%HELP_TOPICS%', buildToc _catalog 
+    _homeContent = (marked _homeMarkdown).replace '%HELP_TOPICS%', buildToc _catalog
     goHome()
 
   link _.ready, ->

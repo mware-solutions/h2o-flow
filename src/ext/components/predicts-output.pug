@@ -2,11 +2,11 @@
   +subtitle('Predictions', 'bolt')
 
   // ko ifnot:hasPredictions
-  blockquote Your H<sub>2</sub>O cloud has no predictions.
+  blockquote Your Tetra cloud has no predictions.
   .flow-panel
     +button('Make a prediction&hellip;', 'bolt', 'predict')
   // /ko
-  
+
   // ko if:hasPredictions
   table.flow-form
     tbody
@@ -26,7 +26,7 @@
           +fa('bolt')
         td(data-bind='text:modelKey')
         td(data-bind='text:frameKey')
-        td.flow-right 
+        td.flow-right
           // ko if:hasFrame
           +button('View', 'bolt', 'view')
           // /ko

@@ -20,7 +20,7 @@ fileUploadDialog = require('../../ext/components/file-upload-dialog')
 exports.init = (_, _renderers) ->
   _localName = signal 'Untitled Flow'
   react _localName, (name) ->
-    document.title = 'H2O' + if name and name.trim() then "- #{name}" else ''
+    document.title = 'Tetra' + if name and name.trim() then "- #{name}" else ''
 
   _remoteName = signal null
 
@@ -379,40 +379,8 @@ exports.init = (_, _renderers) ->
   displayKeyboardShortcuts = ->
     $('#keyboardHelpDialog').modal()
 
-  findBuildProperty = (caption) ->
-    if _.BuildProperties
-      if entry = (find _.BuildProperties, (entry) -> entry.caption is caption)
-        entry.value
-      else
-        undefined
-    else
-      undefined
-
-
-  getBuildProperties = ->
-    projectVersion = findBuildProperty 'H2O Build project version'
-    [
-      findBuildProperty 'H2O Build git branch'
-      projectVersion
-      if projectVersion then last projectVersion.split '.' else undefined
-      (findBuildProperty 'H2O Build git hash') or 'master'
-    ]
-
   displayDocumentation = ->
-    [ gitBranch, projectVersion, buildVersion, gitHash ] = getBuildProperties()
-
-    if buildVersion and buildVersion isnt '99999'
-      window.open "http://h2o-release.s3.amazonaws.com/h2o/#{gitBranch}/#{buildVersion}/docs-website/h2o-docs/index.html", '_blank'
-    else
-      window.open "https://github.com/h2oai/h2o-3/blob/#{gitHash}/h2o-docs/src/product/flow/README.md", '_blank'
-
-  displayFAQ = ->
-    [ gitBranch, projectVersion, buildVersion, gitHash ] = getBuildProperties()
-
-    if buildVersion and buildVersion isnt '99999'
-      window.open "http://h2o-release.s3.amazonaws.com/h2o/#{gitBranch}/#{buildVersion}/docs-website/h2o-docs/index.html", '_blank'
-    else
-      window.open "https://github.com/h2oai/h2o-3/blob/#{gitHash}/h2o-docs/src/product/howto/FAQ.md", '_blank'
+    window.open "https://docs.bigconnect.io/cloud/tetra", '_blank'
 
   executeCommand = (command) -> ->
     _.insertAndExecuteCell 'cs', command
@@ -694,11 +662,6 @@ exports.init = (_, _renderers) ->
         createMenuItem 'Keyboard Shortcuts', displayKeyboardShortcuts, ['h']
         menuDivider
         createMenuItem 'Documentation', displayDocumentation
-        createMenuItem 'FAQ', displayFAQ
-        createMenuItem 'H2O.ai', goToUrl 'http://h2o.ai/'
-        createMenuItem 'H2O on Github', goToUrl 'https://github.com/h2oai/h2o-3'
-        createMenuItem 'Report an issue', goToUrl 'http://jira.h2o.ai'
-        createMenuItem 'Forum / Ask a question', goToUrl 'https://groups.google.com/d/forum/h2ostream'
         menuDivider
         #TODO Tutorial Flows
         createMenuItem 'About', displayAbout

@@ -1,8 +1,8 @@
 .flow-widget
   +subtitle('Models', 'cubes')
-  
+
   // ko ifnot:hasModels
-  blockquote Your H<sub>2</sub>O cloud has no models.
+  blockquote Your Tetra cloud has no models.
   .flow-panel
     +button('Build a model&hellip;', 'cube', 'buildModel')
   // /ko
@@ -27,7 +27,7 @@
         td
           +link('@key', 'view')
         td(data-bind='text:algo')
-        td.flow-right 
+        td.flow-right
           +button('Predict&hellip;', 'bolt', 'predict')
           //- +button('Clone&hellip;', 'copy', 'clone')
           +button('Inspect', 'list', 'inspect')

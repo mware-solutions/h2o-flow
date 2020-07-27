@@ -1,7 +1,7 @@
 Plotly = require('plotly.js')
 
 { flatten, compact, keyBy, findIndex, isFunction, isArray,
-  map, uniq, head, keys, range, escape, sortBy, some, 
+  map, uniq, head, keys, range, escape, sortBy, some,
   tail, concat, values } = require('lodash')
 { isObject, isNumber } = require('../../core/modules/prelude')
 
@@ -20,13 +20,13 @@ lightning = require('../../core/modules/lightning')
 
 _assistance =
   importFiles:
-    description: 'Import file(s) into H<sub>2</sub>O'
+    description: 'Import file(s) into Tetra'
     icon: 'files-o'
   importSqlTable:
-    description: 'Import SQL table into H<sub>2</sub>O'
+    description: 'Import SQL table into Tetra'
     icon: 'table'
   getFrames:
-    description: 'Get a list of frames in H<sub>2</sub>O'
+    description: 'Get a list of frames in Tetra'
     icon: 'table'
   splitFrame:
     description: 'Split a frame into two or more frames'
@@ -35,16 +35,16 @@ _assistance =
     description: 'Merge two frames into one'
     icon: 'link'
   getModels:
-    description: 'Get a list of models in H<sub>2</sub>O'
+    description: 'Get a list of models in Tetra'
     icon: 'cubes'
   getGrids:
-    description: 'Get a list of grid search results in H<sub>2</sub>O'
+    description: 'Get a list of grid search results in Tetra'
     icon: 'th'
   getPredictions:
-    description: 'Get a list of predictions in H<sub>2</sub>O'
+    description: 'Get a list of predictions in Tetra'
     icon: 'bolt'
   getJobs:
-    description: 'Get a list of jobs running in H<sub>2</sub>O'
+    description: 'Get a list of jobs running in Tetra'
     icon: 'tasks'
   runAutoML:
     description: 'Automatically train and tune many models'
