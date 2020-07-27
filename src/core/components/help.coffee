@@ -14,29 +14,14 @@ _homeMarkdown = """
 Using Flow for the first time?
 <br/>
 <div style='margin-top:10px'>
-  <button type='button' data-action='get-flow' data-pack-name='examples' data-flow-name='QuickStartVideos.flow' class='flow-button'><i class='fa fa-file-movie-o'></i><span>Quickstart Videos</span>
+  <button type='button' data-action='get-pack' data-pack-name='examples' class='flow-button'><i class='fa fa-file-movie-o'></i><span>Examples</span>
   </button>
 </div>
 </blockquote>
 
-Or, <a href='#' data-action='get-pack' data-pack-name='examples'>view example Flows</a> to explore and learn Tetra.
-
-###### Star H2O on Github!
-
-<span class="github-btn">
-    <a class="gh-btn" href="https://github.com/h2oai/h2o-3/" target="_blank">
-      <span class="gh-ico"></span><span class="gh-text">Star</span>
-    </a>
-</span>
-<br/>
-
 ###### General
 
 %HELP_TOPICS%
-
-###### Examples
-
-Flow packs are a great way to explore and learn Tetra. Try out these Flows and run them in your browser.<br/><a href='#' data-action='get-packs'>Browse installed packs...</a>
 
 ###### Tetra REST API
 

@@ -14,7 +14,7 @@ exports.init = (_) ->
         unless error
           for { name, value } in response.entries
             properties.push
-              caption: 'H2O ' + name
+              caption: 'Tetra ' + name
               value: value
 
         properties.push
